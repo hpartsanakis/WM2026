@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WM26 Tipp-Spiel | Spiele</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="manifest" href="manifest.json" />
+    <meta name="theme-color" content="#facc15" />
+    <link rel="apple-touch-icon" href="icons/icon-512.png" />
+  </head>
+
+  <body>
+    <header class="app-header">
+      <h1>WM26 Tipp-Spiel</h1>
+      <p>Tipps eintragen, Ergebnisse speichern und Punkte berechnen</p>
+    </header>
+
+    <nav class="main-nav" aria-label="Hauptnavigation">
+      <a href="index.html">Gruppen</a>
+      <a href="spiele.html" class="active" aria-current="page">Spiele & Tipps</a>
+    </nav>
+
+    <main class="app">
+      <section class="stats-grid" aria-label="Übersicht">
+        <div class="stat-card">
+          <span>Spiele</span>
+          <strong id="totalMatches">0</strong>
+        </div>
+        <div class="stat-card">
+          <span>Tipps</span>
+          <strong id="totalTips">0</strong>
+        </div>
+        <div class="stat-card">
+          <span>Offen</span>
+          <strong id="openTips">0</strong>
+        </div>
+        <div class="stat-card">
+          <span>Punkte</span>
+          <strong id="totalPoints">0</strong>
+        </div>
+      </section>
+
+      <section class="filters" aria-label="Spieltag auswählen">
+        <button class="filter-btn active" type="button" data-view="matchday-1">Spieltag 1</button>
+        <button class="filter-btn" type="button" data-view="matchday-2">Spieltag 2</button>
+        <button class="filter-btn" type="button" data-view="matchday-3">Spieltag 3</button>
+      </section>
+
+      <section id="groupMatchesContainer" class="matches-container" aria-live="polite"></section>
+    </main>
+
+    <script src="data/groups.js"></script>
+    <script src="data/matches.js"></script>
+    <script src="js/spiele.js"></script>
+  </body>
+</html>
