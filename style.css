@@ -143,6 +143,10 @@ button:hover {
   gap: 16px;
 }
 
+.third-place-container {
+  margin-top: 16px;
+}
+
 .group-card {
   overflow: hidden;
 }
@@ -179,6 +183,20 @@ button:hover {
 
 .group-table tbody tr:nth-child(-n + 2) th,
 .group-table tbody tr:nth-child(-n + 2) td {
+  background: rgba(15, 143, 99, 0.08);
+}
+
+.third-place-table {
+  min-width: 760px;
+}
+
+.third-place-table tbody tr:nth-child(-n + 2) th,
+.third-place-table tbody tr:nth-child(-n + 2) td {
+  background: transparent;
+}
+
+.third-place-table tbody tr.qualified-third th,
+.third-place-table tbody tr.qualified-third td {
   background: rgba(15, 143, 99, 0.08);
 }
 

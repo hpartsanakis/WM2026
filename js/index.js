@@ -2,6 +2,7 @@ const RESULTS_KEY = "wm26-results";
 const TIPS_KEY = "wm26-tips";
 
 const groupsContainer = document.getElementById("groupsContainer");
+const thirdPlaceContainer = document.getElementById("thirdPlaceContainer");
 
 function loadStoredObject(key) {
   try {
@@ -70,13 +71,17 @@ function calculateGroupTable(group) {
     row.goalDiff = row.goalsFor - row.goalsAgainst;
   });
 
-  return table.sort((a, b) => (
+  return table.sort(compareTableRows);
+}
+
+function compareTableRows(a, b) {
+  return (
     b.points - a.points ||
     b.goalDiff - a.goalDiff ||
     b.goalsFor - a.goalsFor ||
     a.goalsAgainst - b.goalsAgainst ||
     a.team.localeCompare(b.team, "de")
-  ));
+  );
 }
 
 function formatGoalDiff(value) {
@@ -137,6 +142,67 @@ function renderGroups() {
   });
 }
 
+function calculateThirdPlaceTable() {
+  return groups
+    .map((group) => {
+      const thirdPlacedTeam = calculateGroupTable(group)[2];
+      return { ...thirdPlacedTeam, group: group.id };
+    })
+    .sort(compareTableRows);
+}
+
+function renderThirdPlaceTable() {
+  if (!thirdPlaceContainer) return;
+
+  const table = calculateThirdPlaceTable();
+
+  thirdPlaceContainer.innerHTML = `
+    <article class="group-card third-place-card">
+      <div class="table-scroll">
+        <table class="group-table third-place-table">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Team</th>
+              <th scope="col">Gr</th>
+              <th scope="col">Sp</th>
+              <th scope="col">S</th>
+              <th scope="col">U</th>
+              <th scope="col">N</th>
+              <th scope="col">Tore</th>
+              <th scope="col">Diff</th>
+              <th scope="col">Pkt</th>
+              <th scope="col">Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            ${table
+              .map((row, index) => {
+                const isQualified = index < 8;
+                return `
+                  <tr class="${isQualified ? "qualified-third" : ""}">
+                    <td>${index + 1}</td>
+                    <th scope="row">${row.team}</th>
+                    <td>${row.group}</td>
+                    <td>${row.played}</td>
+                    <td>${row.wins}</td>
+                    <td>${row.draws}</td>
+                    <td>${row.losses}</td>
+                    <td>${row.goalsFor}:${row.goalsAgainst}</td>
+                    <td>${formatGoalDiff(row.goalDiff)}</td>
+                    <td><strong>${row.points}</strong></td>
+                    <td>${isQualified ? "Weiter" : "Ausgeschieden"}</td>
+                  </tr>
+                `;
+              })
+              .join("")}
+          </tbody>
+        </table>
+      </div>
+    </article>
+  `;
+}
+
 function calculateTipPoints(matchId) {
   const tips = loadStoredObject(TIPS_KEY);
   const results = loadStoredObject(RESULTS_KEY);
@@ -174,6 +240,7 @@ function renderDashboard() {
 function render() {
   renderDashboard();
   renderGroups();
+  renderThirdPlaceTable();
 }
 
 render();
