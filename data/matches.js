@@ -90,8 +90,8 @@ const knockoutMatches = [
     roundName: "16tel-Finale",
     date: "2026-06-28",
     time: "21:00",
-    home: "2. Gruppe A",
-    away: "2. Gruppe B",
+    home: "Südafrika",
+    away: "Kanada",
   },
   {
     id: 74,
@@ -99,8 +99,8 @@ const knockoutMatches = [
     roundName: "16tel-Finale",
     date: "2026-06-29",
     time: "19:00",
-    home: "1. Gruppe C",
-    away: "2. Gruppe F",
+    home: "Brazilien",
+    away: "Japan",
   },
   {
     id: 75,
@@ -108,7 +108,7 @@ const knockoutMatches = [
     roundName: "16tel-Finale",
     date: "2026-06-29",
     time: "22:30",
-    home: "1. Gruppe E",
+    home: "Deutschland",
     away: "3. Gruppe A/B/C/D/F",
   },
 
@@ -117,7 +117,7 @@ const knockoutMatches = [
     round: "round-32",
     roundName: "16tel-Finale",
     date: "2026-06-30",
-    time: "03:00",  
+    time: "03:00",
     home: "1. Gruppe F",
     away: "2. Gruppe C",
   },
@@ -208,7 +208,7 @@ const knockoutMatches = [
     roundName: "16tel-Finale",
     date: "2026-07-03",
     time: "20:00",
-    home: "1. Gruppe D",
+    home: "2. Gruppe D",
     away: "2. Gruppe G",
   },
   {
