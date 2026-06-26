@@ -118,8 +118,8 @@ const knockoutMatches = [
     roundName: "16tel-Finale",
     date: "2026-06-30",
     time: "03:00",
-    home: "1. Gruppe F",
-    away: "2. Gruppe C",
+    home: "Niederlande",
+    away: "Marokko",
   },
   {
     id: 77,
@@ -127,7 +127,7 @@ const knockoutMatches = [
     roundName: "16tel-Finale",
     date: "2026-06-30",
     time: "19:00",
-    home: "2. Gruppe E",
+    home: "Elfenbeinküste",
     away: "2. Gruppe I",
   },
   {
@@ -145,7 +145,7 @@ const knockoutMatches = [
     roundName: "16tel-Finale",
     date: "2026-07-01",
     time: "03:00",
-    home: "1. Gruppe A",
+    home: "Mexiko",
     away: "3. Gruppe C/E/F/H/I",
   },
   {
@@ -172,8 +172,8 @@ const knockoutMatches = [
     roundName: "16tel-Finale",
     date: "2026-07-02",
     time: "02:00",
-    home: "1. Gruppe D",
-    away: "3. Gruppe B/E/F/I/J",
+    home: "Vereinigte Staaten",
+    away: "Bosnien und Herzegowina",
   },
   {
     id: 83,
@@ -199,7 +199,7 @@ const knockoutMatches = [
     roundName: "16tel-Finale",
     date: "2026-07-03",
     time: "05:00",
-    home: "1. Gruppe B",
+    home: "Schweiz",
     away: "3. Gruppe E/F/G/I/J",
   },
   {
@@ -208,7 +208,7 @@ const knockoutMatches = [
     roundName: "16tel-Finale",
     date: "2026-07-03",
     time: "20:00",
-    home: "2. Gruppe D",
+    home: "Australien",
     away: "2. Gruppe G",
   },
   {
@@ -217,7 +217,7 @@ const knockoutMatches = [
     roundName: "16tel-Finale",
     date: "2026-07-04",
     time: "00:00",
-    home: "1. Gruppe B",
+    home: "Argentinien",
     away: "2. Gruppe H",
   },
   {
